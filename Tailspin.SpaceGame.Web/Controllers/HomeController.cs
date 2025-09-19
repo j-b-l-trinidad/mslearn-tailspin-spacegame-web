@@ -8,6 +8,7 @@ using TailSpin.SpaceGame.Web.Models;
 
 namespace TailSpin.SpaceGame.Web.Controllers
 {
+    //a
     public class HomeController : Controller
     {
         // High score repository.
