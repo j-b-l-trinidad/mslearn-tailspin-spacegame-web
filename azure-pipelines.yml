@@ -41,8 +41,8 @@ steps:
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
-  - task: NuGetAuthenticate@0
-    displayName: 'Authenticate to NuGet Feeds'
+  # - task: NuGetAuthenticate@0
+  #   displayName: 'Authenticate to NuGet Feeds'
 
 - task: NuGetCommand@2
   displayName: 'Restore project dependencies'
