@@ -19,7 +19,7 @@ steps:
 
 - task: NuGetToolInstaller@0
   inputs:
-    versionSpec: 'latest'
+    versionSpec: '6.14.0'
 
 - task: CmdLine@2
   displayName: 'Force clear npm cache'
