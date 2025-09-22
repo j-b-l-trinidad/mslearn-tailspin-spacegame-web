@@ -41,6 +41,9 @@ steps:
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
+  - task: NuGetAuthenticate@0
+    displayName: 'Authenticate to NuGet Feeds'
+
 - task: NuGetCommand@2
   displayName: 'Restore project dependencies'
   inputs:
@@ -49,6 +52,7 @@ steps:
     feedsToUse: 'config'
     # vstsFeed: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
     nugetConfigPath: 'nuget.config'
+    includeNuGetOrg: true
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
