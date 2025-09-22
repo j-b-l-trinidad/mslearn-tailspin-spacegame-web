@@ -21,6 +21,11 @@ steps:
   inputs:
     versionSpec: '5.9.1'
 
+- task: CmdLine@2
+  displayName: 'Force clear npm cache'
+  inputs:
+    script: 'npm cache clean --force'
+
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
