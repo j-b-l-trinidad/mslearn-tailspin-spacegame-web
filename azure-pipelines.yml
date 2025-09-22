@@ -44,15 +44,23 @@ steps:
   # - task: NuGetAuthenticate@0
   #   displayName: 'Authenticate to NuGet Feeds'
 
+# - task: NuGetCommand@2
+#   displayName: 'Restore project dependencies'
+#   inputs:
+#     command: 'restore'
+#     restoreSolution: '**/*.sln'
+#     feedsToUse: 'config'
+#     # vstsFeed: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
+#     nugetConfigPath: 'nuget.config'
+#     includeNuGetOrg: true
+
 - task: NuGetCommand@2
   displayName: 'Restore project dependencies'
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
-    feedsToUse: 'config'
-    # vstsFeed: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
-    nugetConfigPath: 'nuget.config'
-    includeNuGetOrg: true
+    feedsToUse: 'select'
+    vstsFeed: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
